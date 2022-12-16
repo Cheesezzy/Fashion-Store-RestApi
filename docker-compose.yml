@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  API:
+    image: pachi114/fashion-blog-restapi
+    restart: always
+    ports:
+      - "8000:8080"
+    depends_on:
+      - bored-db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3306/blogDB
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=password
+  bored-db:
+    container_name: bored-db
+    image: mysql:8.0
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=blogDB
+      - MYSQL_ROOT_PASSWORD=password
+    ports:
+      - "3307:3306"
+    restart: always
