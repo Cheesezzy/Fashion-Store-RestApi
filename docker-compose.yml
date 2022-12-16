@@ -8,7 +8,7 @@ services:
     depends_on:
       - bored-db
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3306/blogDB
+      - SPRING_DATASOURCE_URL=jdbc:mysql://bored-db:3306/blogDB
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=password
   bored-db:
