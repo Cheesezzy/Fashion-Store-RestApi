@@ -13,7 +13,7 @@ services:
       - SPRING_DATASOURCE_PASSWORD=password
   bored-db:
     container_name: bored-db
-    image: mysql:8.0
+    image: mysql
     environment:
       - MYSQL_USER=root
       - MYSQL_PASSWORD=password
