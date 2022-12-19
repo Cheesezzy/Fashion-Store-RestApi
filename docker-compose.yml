@@ -3,14 +3,14 @@ services:
   API:
     image: pachi114/fashion-blog-restapi
     restart: always
-    ports:
-      - "8000:8080"
+#    ports:
+#      - "8000:8080"
     depends_on:
       - bored-db
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://bored-db:5432/blogDB
-      - SPRING_DATASOURCE_USERNAME=root
-      - SPRING_DATASOURCE_PASSWORD=password
+#      - SPRING_DATASOURCE_USERNAME=root
+#      - SPRING_DATASOURCE_PASSWORD=password
   bored-db:
     image: postgres
     container_name: bored-db
@@ -19,3 +19,6 @@ services:
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=blogDB
     restart: always
+
+# docker compose rm -f
+#docker compose up
