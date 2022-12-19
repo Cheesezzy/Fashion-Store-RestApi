@@ -3,8 +3,8 @@ services:
   API:
     image: pachi114/fashion-blog-restapi
     restart: always
-#    ports:
-#      - "8000:8080"
+    ports:
+      - "8000:8080"
     depends_on:
       - bored-db
     environment:
